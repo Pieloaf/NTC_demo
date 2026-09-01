@@ -86,3 +86,37 @@ collections:
           - { label: "Site Title", name: "title", widget: "string", hint: "Your site's title, used for branding and SEO." }
           - { label: "Site Description", name: "description", widget: "text", hint: "Your site's description, used for SEO." }
           - { label: "Site URL", name: "url", widget: "string", hint: "Your live site's full URL." }
+          - label: "Theme"
+            name: "theme"
+            widget: "object"
+            fields:
+              - label: "Colors"
+                name: "colors"
+                widget: "object"
+                fields:
+                  - { label: "Primary", name: "primary", widget: "string", default: "#2e51ed" }
+                  - { label: "Secondary", name: "secondary", widget: "string", default: "white" }
+                  - { label: "Background", name: "background", widget: "string", default: "#f1f1f1" }
+                  - { label: "Text", name: "text", widget: "string", default: "#111111" }
+                  - { label: "Accent", name: "accent", widget: "string", default: "#e91e63" }
+              - label: "Fonts"
+                name: "fonts"
+                widget: "object"
+                fields:
+                  - { label: "Base font stack", name: "base", widget: "string", default: "system-ui,-apple-system,Segoe UI,Roboto" }
+                  - { label: "Heading font stack", name: "heading", widget: "string", default: "inherit" }
+              - label: "Spacing scale"
+                name: "spacing"
+                widget: "list"
+                field:
+                  { label: "value", name: "value", widget: "string" }
+                default: ["0.25rem","0.5rem","1rem","1.5rem","2rem"]
+              - label: "Logo"
+                name: "logo"
+                widget: "image"
+                hint: "Upload site logo (recommended height 40–80px)."
+              - { label: "Logo alt text", name: "logoAlt", widget: "string", default: "" }
+              - label: "Custom CSS"
+                name: "customCSS"
+                widget: "text"
+                hint: "Optional additional CSS to include in the head."

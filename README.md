@@ -1,11 +1,3 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/5ebf7378-bb17-482f-8e28-8dfbe0cd8a6a/deploy-status)](https://app.netlify.com/sites/eleventy-sveltia-cms-starter/deploys)
-
-# Eleventy Sveltia CMS Starter
-
-## Demo: https://eleventy-sveltia-cms-starter.netlify.app/
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/danurbanowicz/eleventy-sveltia-cms-starter)
-
 ## What is it?
 
 This is a template for building a simple blog website with [Eleventy](https://www.11ty.dev) and [Sveltia CMS](https://github.com/sveltia/sveltia-cms), with automatic deployment to [Netlify](https://www.netlify.com).
@@ -26,18 +18,6 @@ The aim is to get you up and running in a few minutes with a free, fast, and sec
 - Optional pipeline for minified inline JavaScript
 - Uses Nunjucks templates for layout
 - Netlify continuous deployment (CD) workflow
-
-## Requirements
-
-- A GitHub account
-- A Netlify account
-- Basic knowledge of the command line and git
-
-## Quick Deploy to Netlify
-
-Optionally, you can [Deploy to this template to Netlify](https://app.netlify.com/start/deploy?repository=https://github.com/danurbanowicz/eleventy-sveltia-cms-starter) which will create a new GitHub repository for you and link it to your Netlify account, configuring automatic deploys in one step.
-
-*Important: You will still need to configure the CMS and set up an OAuth application in GitHub to be able to authenticate and use the CMS on your live site (see steps below).*
 
 ## Install this template
 
@@ -89,16 +69,3 @@ When you edit content through the CMS, it makes changes to the content files in 
 All of your content edits are saved in your git repo commit history so you can roll back to a previous version of your site at any time using standard git commands, or by using the GitHub.com website UI.
 
 If you choose to install this project locally, you can use the CMS to make changes to your local repo, and then manually push those changes to your remote (see steps above). This will trigger a new Netlify build of your site.
-
-## Getting help with this template
-
-If you need help setting up this template, or if you have any ideas or suggestions, head over to [Discussions](https://github.com/danurbanowicz/eleventy-sveltia-cms-starter/discussions) and create a new discussion.
-
-If you've found a bug or think something in this template is broken (very possible) please [open a new issue](https://github.com/danurbanowicz/eleventy-sveltia-cms-starter/issues) and provide as much information as you can to ensure a fast solution.
-
-If you have a question specifically related to the Sveltia CMS project, we recommend you to head over there and [open a discussion](https://github.com/sveltia/sveltia-cms/discussions) for faster support.
-
-## TO DO
-- Add quick CMS tips e.g. Sveltia CMS preferences
-- Finish the authors and blog page layouts
-- Add descriptive comments in project files to help new users

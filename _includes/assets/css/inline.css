@@ -19,8 +19,9 @@
 body {
 	padding: 0;
 	margin: 0;
-	font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+	font-family: var(--font-base, system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif);
 	line-height: 1.65;
+	color: var(--text);
 }
 
 body {
@@ -82,6 +83,9 @@ header nav ul {
 	padding: 0;
 	list-style: none;
 }
+
+.nav-brand { display: inline-block; margin-right: 1rem; vertical-align: middle; }
+.site-logo { height: 48px; width: auto; display: inline-block; }
 
 header nav li {
 	display: inline-block;

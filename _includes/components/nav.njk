@@ -1,4 +1,13 @@
 <nav>
+  <div class="nav-brand">
+    <a href="/" class="brand">
+      {% if settings.theme and settings.theme.logo %}
+        <img src="{{ settings.theme.logo }}" alt="{{ settings.theme.logoAlt or settings.title }}" class="site-logo" />
+      {% else %}
+        <em>{{ settings.title }}</em>
+      {% endif %}
+    </a>
+  </div>
   {% set navPages = collections.all | eleventyNavigation %}
   <ul>
     {%- for entry in navPages %}

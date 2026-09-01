@@ -8,6 +8,27 @@
     {% include "assets/css/inline.css" %}
   {% endset %}
   <style>{{ css | cssmin | safe }}</style>
+  {% if settings.theme %}
+  <style>
+  :root {
+    --primary: {{ settings.theme.colors.primary | default('#2e51ed') }};
+    --secondary: {{ settings.theme.colors.secondary | default('white') }};
+    --background: {{ settings.theme.colors.background | default('#f1f1f1') }};
+    --text: {{ settings.theme.colors.text | default('#111111') }};
+    --accent: {{ settings.theme.colors.accent | default('#e91e63') }};
+    --font-base: {{ settings.theme.fonts.base | default('system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif') }};
+    --font-heading: {{ settings.theme.fonts.heading | default('inherit') }};
+    --space-0: {{ settings.theme.spacing[0] | default('0.25rem') }};
+    --space-1: {{ settings.theme.spacing[1] | default('0.5rem') }};
+    --space-2: {{ settings.theme.spacing[2] | default('1rem') }};
+    --space-3: {{ settings.theme.spacing[3] | default('1.5rem') }};
+    --space-4: {{ settings.theme.spacing[4] | default('2rem') }};
+  }
+  </style>
+  {% if settings.theme.customCSS %}
+  <style>{{ settings.theme.customCSS }}</style>
+  {% endif %}
+  {% endif %}
   {# Uncomment below if you want to include minified inline JS #}
   {# {% set js %}
     {% include "assets/js/inline.js" %}
