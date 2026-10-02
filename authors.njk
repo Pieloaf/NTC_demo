@@ -20,7 +20,7 @@ permalink: "authors/index.html"
 
     <article>
 
-      <a href="{{ author.url }}">
+      <a href="{{ author.url | url }}">
       
         {% if author.data.image %}
           {% generateImage author.data.image, author.data.name, "90vw" %}

@@ -7,6 +7,8 @@ const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const Image = require("@11ty/eleventy-img");
 
 module.exports = function (eleventyConfig) {
+  const rawPathPrefix = process.env.ELEVENTY_PATH_PREFIX || "/";
+  const pathPrefix = rawPathPrefix === "/" ? "/" : `/${rawPathPrefix.replace(/^\/+|\/+$/g, "")}/`;
   
   // https://www.11ty.dev/docs/plugins/image/
   eleventyConfig.addShortcode("generateImage", async function(src, alt, sizes) {
@@ -15,7 +17,7 @@ module.exports = function (eleventyConfig) {
     let metadata = await Image(normalizedSrc, {
       widths: [500, 1000, "auto"],
       formats: ["avif", "jpeg", "png", "webp"],
-      urlPath: "/assets/img/",
+      urlPath: `${pathPrefix}assets/img/`,
       outputDir: "./_site/assets/img/"
     });
     
@@ -127,7 +129,7 @@ module.exports = function (eleventyConfig) {
     // Leading or trailing slashes are all normalized away, so don’t worry about it.
     // If you don’t have a subdirectory, use "" or "/" (they do the same thing)
     // This is only used for URLs (it does not affect your file structure)
-    pathPrefix: "/",
+    pathPrefix,
     
     markdownTemplateEngine: "liquid",
     htmlTemplateEngine: "njk",

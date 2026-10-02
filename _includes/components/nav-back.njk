@@ -1,3 +1,4 @@
 <nav>
-  <a href="{{ backUrl or '/posts/' }}">← {{ backTitle or "Blog" }} index</a>
+  {% set resolvedBackUrl = backUrl or '/posts/' %}
+  <a href="{{ resolvedBackUrl | url }}">← {{ backTitle or "Blog" }} index</a>
 </nav>

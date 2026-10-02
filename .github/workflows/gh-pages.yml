@@ -24,22 +24,25 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Configure Pages
+        id: pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
       - name: Install dependencies
         run: npm install
 
       - name: Build site
         run: npm run build
+        env:
+          ELEVENTY_PATH_PREFIX: ${{ steps.pages.outputs.base_path }}
 
       - name: Create .nojekyll (optional)
         run: |
           if [ -d "_site" ]; then
             touch _site/.nojekyll
           fi
-
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
-        with:
-          enablement: true
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

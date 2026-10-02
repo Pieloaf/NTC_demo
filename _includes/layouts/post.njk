@@ -17,7 +17,8 @@ section: post
         {{ page.date | readableDate }}
       </time>
       by
-      <a href="/authors/{{ author | slug}}">{{ author }}</a>
+      {% set authorUrl %}/authors/{{ author | slug }}/{% endset %}
+      <a href="{{ authorUrl | url }}">{{ author }}</a>
       {% if tags %}
         in
         {% for tag in tags %}

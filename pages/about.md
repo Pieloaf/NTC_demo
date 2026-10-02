@@ -10,6 +10,6 @@ description: This is a sample meta description. If one is not present in your pa
 ---
 This is an **example** of a page.
 
-You can edit this content with the CMS  at [Pages > About](/admin/#/collections/pages/entries/about) or you can edit the Markdown file directly at `pages/about.md`.
+You can edit this content with the CMS  at [Pages > About]({{ '/admin/#/collections/pages/entries/about' | url }}) or you can edit the Markdown file directly at `pages/about.md`.
 
 This page uses the default page template located at `includes/layouts/page.njk`.

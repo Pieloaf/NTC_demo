@@ -5,7 +5,7 @@
     {% endif %}
     <div class="card bg-base-100 h-100 w-96 shadow-sm items-center m-2 text-center">
         <figure>
-            <img style="{height: 20%}" src="{{ event.data.image }}" alt="Event thumbnail image"/>
+            <img style="{height: 20%}" src="{{ event.data.image | url }}" alt="Event thumbnail image"/>
         </figure>
         <div class="card-body">
             <div class="flex justify-between w-full">

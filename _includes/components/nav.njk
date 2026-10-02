@@ -1,8 +1,8 @@
 <nav>
   <div class="nav-brand">
-    <a href="/" class="brand">
+    <a href="{{ '/' | url }}" class="brand">
       {% if settings.theme and settings.theme.logo %}
-        <img src="{{ settings.theme.logo }}" alt="{{ settings.theme.logoAlt or settings.title }}" class="site-logo" />
+        <img src="{{ settings.theme.logo | url }}" alt="{{ settings.theme.logoAlt or settings.title }}" class="site-logo" />
       {% else %}
         <em>{{ settings.title }}</em>
       {% endif %}
