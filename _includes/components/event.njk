@@ -1,0 +1,34 @@
+{% for event in eventsList %}
+    {%- set eventId = event.data.ticketting.url | extractEventbriteId %}
+    {% if event.data.ticketting.service == "Eventbrite" %}
+        <script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
+    {% endif %}
+    <div class="card bg-base-100 h-100 w-96 shadow-sm items-center m-2 text-center">
+        <figure>
+            <img style="{height: 20%}" src="{{ event.data.image }}" alt="Event thumbnail image"/>
+        </figure>
+        <div class="card-body">
+            <div class="flex justify-between w-full">
+                <h2 class="card-title">{{ event.data.title }}</h2>
+                <span class="badge badge-primary">€{{ event.data.ticketting.price }}</span>
+            </div>
+            <p>{{layoutContent | safe}}</p>
+            <div class="card-actions justify-end">
+                <a class="btn" type="button" id="eventbrite-widget-modal-trigger-{{ eventId }}">Get Tickets</a>
+                <a class="btn " href="{{ event.data.ticketting.url }}">More Info</a>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var exampleCallback = function () {
+            console.log('Order complete!');
+        };
+        window.EBWidgets.createWidget({
+            widgetType: 'checkout',
+            eventId: {{ eventId }},
+            modal: true,
+            modalTriggerElementId: 'eventbrite-widget-modal-trigger-{{ eventId }}',
+            onOrderComplete: exampleCallback
+        });
+    </script>
+{% endfor %}

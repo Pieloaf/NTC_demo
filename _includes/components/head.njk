@@ -7,9 +7,11 @@
   {% set css %}
     {% include "assets/css/inline.css" %}
   {% endset %}
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <style>{{ css | cssmin | safe }}</style>
   {% if settings.theme %}
-  <style>
+  {# <style>
   :root {
     --primary: {{ settings.theme.colors.primary | default('#2e51ed') }};
     --secondary: {{ settings.theme.colors.secondary | default('white') }};
@@ -24,10 +26,10 @@
     --space-3: {{ settings.theme.spacing[3] | default('1.5rem') }};
     --space-4: {{ settings.theme.spacing[4] | default('2rem') }};
   }
-  </style>
-  {% if settings.theme.customCSS %}
+  </style> #}
+  {# {% if settings.theme.customCSS %}
   <style>{{ settings.theme.customCSS }}</style>
-  {% endif %}
+  {% endif %} #}
   {% endif %}
   {# Uncomment below if you want to include minified inline JS #}
   {# {% set js %}

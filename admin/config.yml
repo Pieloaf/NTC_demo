@@ -8,7 +8,7 @@
 # Enter your GitHub repo path and branch (defaults to master)
 backend:
   name: github
-  repo: danurbanowicz/eleventy-sveltia-cms-starter
+  repo: pieloaf/NTC_demo
   branch: master
 
 # The folder used to store uploaded images
@@ -16,9 +16,9 @@ media_folder: "assets/img"
 
 # The CMS collections and their fields
 collections:
-  - name: "blog"
-    label: "Posts"
-    label_singular: "Post"
+  - name: "posts"
+    label: "Resources"
+    label_singular: "Resource"
     folder: "posts"
     create: true
     slug: "{{slug}}"
@@ -27,7 +27,7 @@ collections:
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Author", name: "author", widget: "relation", collection: "authors", value_field: "name" }
       - { label: "Summary", name: "summary", widget: "text" }
-      - { label: "Tags", name: "tags", widget: "list", default: ["post"], hint: "Enter tags separated by a comma" }
+      - { label: "Tags", name: "tags", widget: "list", default: ["notes"], hint: "Enter tags separated by a comma" }
       - label: "Image"
         name: "image"
         widget: "image"
@@ -38,6 +38,41 @@ collections:
             #max_file_size: 2048000 # maximum image file size in bytes
       - { label: "Image Alt Text", name: "imageAltText", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
+  - name: "events"
+    folder: "events"
+    label: "Event"
+    label_singular: "Event"
+    create: true
+    fields:
+      - label: "Event Title"
+        name: title
+        widget: string
+      - label: "Event Description"
+        name: body
+        widget: markdown
+      - label: "Event Date"
+        name: date
+        widget: datetime
+      - label: "Event Banner"
+        name: image
+        widget: image
+      - label: "Ticketting"
+        name: "ticketting" 
+        widget: object
+        fields: 
+          - label: "Ticketting Service"
+            name: service
+            widget: select
+            options:
+              - Eventbrite
+              - Humanitix
+          - label: Event Link
+            name: url
+            widget: string
+          - label: Ticket Price
+            name: price
+            before_input: €
+            value_type: float
   - name: "pages"
     label: "Pages"
     label_singular: "Page"
