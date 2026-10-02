@@ -3,6 +3,7 @@ name: Build and Deploy Eleventy to GitHub Pages
 on:
   push:
     branches:
+      - master
       - main
   workflow_dispatch:
 
